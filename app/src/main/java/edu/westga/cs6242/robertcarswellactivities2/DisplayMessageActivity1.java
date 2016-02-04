@@ -7,9 +7,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class DisplayMessageActivity1 extends AppCompatActivity {
+    public final static String EXTRA_MESSAGE2 = "com.mycompany.myfirstapp.MESSAGE2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +37,16 @@ public class DisplayMessageActivity1 extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
+    }
+
+    /**
+     * Called when the user clicks the Send button
+     */
+    public void sendMessage2(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity2.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message2);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE2, message);
+        startActivity(intent);
     }
 }
