@@ -33,7 +33,7 @@ public class DisplayMessageActivity1 extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
-        TextView textView = new TextView(this);
+        TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
     }
 }

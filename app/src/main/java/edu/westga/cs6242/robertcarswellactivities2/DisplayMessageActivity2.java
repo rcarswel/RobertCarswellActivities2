@@ -34,11 +34,11 @@ public class DisplayMessageActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
 
         String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
-        TextView textView1 = new TextView(this);
+        TextView textView1 = (TextView) findViewById(R.id.textView1);
         textView1.setText(message1);
 
         String message2 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
-        TextView textView2 = new TextView(this);
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(message2);
     }
 }
