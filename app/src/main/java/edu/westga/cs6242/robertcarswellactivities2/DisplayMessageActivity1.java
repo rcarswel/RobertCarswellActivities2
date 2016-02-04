@@ -1,11 +1,14 @@
 package edu.westga.cs6242.robertcarswellactivities2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class DisplayMessageActivity1 extends AppCompatActivity {
 
@@ -24,7 +27,19 @@ public class DisplayMessageActivity1 extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText(message);
+
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.content1);
+        layout.addView(textView);
     }
 
 }
