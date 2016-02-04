@@ -9,12 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-public class DisplayMessageActivity1 extends AppCompatActivity {
+public class DisplayMessageActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message1);
+        setContentView(R.layout.activity_display_message2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -32,8 +32,13 @@ public class DisplayMessageActivity1 extends AppCompatActivity {
         }
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
-        TextView textView = new TextView(this);
-        textView.setText(message);
+
+        String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
+        TextView textView1 = new TextView(this);
+        textView1.setText(message1);
+
+        String message2 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
+        TextView textView2 = new TextView(this);
+        textView2.setText(message2);
     }
 }

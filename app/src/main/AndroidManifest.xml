@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.westga.cs6242.robertcarswellactivities2.MainActivity" />
         </activity>
+        <activity
+            android:name=".DisplayMessageActivity2"
+            android:label="@string/title_activity_display_message2"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.westga.cs6242.robertcarswellactivities2.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
