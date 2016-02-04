@@ -1,5 +1,6 @@
 package edu.westga.cs6242.robertcarswellactivities2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public final static String EXTRA_MESSAGE1 = "com.mycompany.myfirstapp.MESSAGE1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Called when the user clicks the Send button
      */
-    public void sendMessage(View view) {
-        // Do something in response to button
+    public void sendMessage1(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity1.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message1);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE1, message);
+        startActivity(intent);
     }
 }
